@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/story/recommend/recommend",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "故事书",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/story/recommend/recommend",
+        "text": "推荐",
+        "iconPath": "image/主页.png",
+        "selectedIconPath": "image/主页.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "书架",
+        "iconPath": "image/照明.png",
+        "selectedIconPath": "image/照明.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "image/联系人.png",
+        "selectedIconPath": "image/联系人.png"
+      }
+    ]
+  }
+}

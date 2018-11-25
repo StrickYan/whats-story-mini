@@ -1,0 +1,47 @@
+/**recommend.wxss**/
+
+.page {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card {
+  margin: 0 30rpx 30rpx 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.story-card:first-child {
+  margin-top: 30rpx;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.head {
+  font-size: 14px;
+}
+
+.eye {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.click, .author, .publish_time, .tags {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 20rpx;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  padding: 0 10rpx;
+  border: 1px #ccc solid;
+}
