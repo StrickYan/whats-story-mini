@@ -2,14 +2,16 @@
 <view class="page">
   <view wx:for="{{storyList}}" wx:key="story_id" class="story-card">
     <view class='title'>{{item.title}}</view>
-    <view class='head'>
+    <view class='head' data-storyid="{{item.story_id}}" bindtap="detailPage">
       <text>{{item.head}}</text>
     </view>
     <view class='story-card-bottom'>
-      <!-- <image mode="aspectFill" src="/image/eye.png" class='eye'></image>
+      <!-- <image mode="scaleToFill" src="/image/eye.png" class='eye'></image>
       <view class='click'>{{item.click}}</view> -->
-      <view class='author'>{{item.author}}</view>
-      <view class='publish_time'>{{item.publish_time}}</view>
+      <view class='story-card-bottom-left'>
+        <view class='author'>{{item.author}}</view>
+        <view class='publish_time'>{{item.publish_time}}</view>
+      </view>
       <view class='tags'>
         <view class='tag source_name'>{{item.source_name}}</view>
         <view class='tag cate_name'>{{item.cate_name}}</view>

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/story/recommend/recommend",
+    "pages/story/detail/detail",
     "pages/index/index",
     "pages/logs/logs"
   ],

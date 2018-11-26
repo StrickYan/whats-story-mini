@@ -1,13 +1,18 @@
-//index.js
+//detail.js
 //获取应用实例
 const app = getApp()
 const config = require('../../../config')
 
 Page({
   data: {
-    storyList: []
+    storyId: 0,
+    storyDetail: {},
   },
-  onLoad: function() {
+  onLoad: function(params) {
+    // console.log(params)
+    this.setData({
+      storyId: params.story_id,
+    })
     wx.showLoading({
       title: '加载中',
       mask: true
@@ -19,15 +24,15 @@ Page({
     wx.request({
       url: config.getStoryApi,
       data: {
-        noncestr: Date.now()
+        story_id: that.data.storyId
       },
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded'
       },
       method: "POST",
       dataType: "json",
       success(result) {
-        if (config.errorCode.success != result.data.errno) {
+        if (config.errorCode.success != result.data.errno || !result.data.data[0]) {
           wx.showToast({
             title: result.data.errmsg,
             // icon: 'none',
@@ -38,7 +43,7 @@ Page({
           return
         }
         that.setData({
-          storyList: result.data.data
+          storyDetail: result.data.data[0]
         })
       },
       fail(result) {
@@ -55,13 +60,6 @@ Page({
         // console.log('request complete', result)
         wx.hideLoading()
       }
-    })
-  },
-  detailPage: function(event) {
-    // console.log(event)
-    let storyId = event.currentTarget.dataset.storyid
-    wx.navigateTo({
-      url: '../detail/detail?story_id=' + storyId
     })
   }
 })

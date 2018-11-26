@@ -1,0 +1,51 @@
+/**detail.wxss**/
+@import "../../template/foot.wxss";
+
+page {
+  height: 100%; /*服务 foot 底部孤固定*/
+}
+
+.page {
+  position: relative; /*服务 foot 底部固定*/
+  min-height: 100%; /*服务 foot 底部固定*/
+  padding-bottom: 160rpx; /*服务 foot 底部固定*/
+  box-sizing: border-box; /*服务 foot 底部固定*/
+  display: flex;
+  flex-direction: column;
+}
+
+#story_detail {
+  margin: 30rpx;
+  padding: 30rpx;
+}
+
+#title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#story_detail_line {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  /* justify-content: space-between; */
+  margin: 30rpx 0;
+}
+
+#author, #publish_time, #source_name, #cate_name {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 20rpx;
+}
+
+#source_name, #cate_name {
+  border-radius: 20rpx;
+  padding: 0 5rpx;
+  border: 1px #ccc solid;
+}
+
+#content {
+  font-size: 16px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}

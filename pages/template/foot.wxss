@@ -1,0 +1,11 @@
+#domain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: #adadad;
+  background-color: #1a1a1a;
+  height: 160rpx;
+  line-height: 160rpx;
+}

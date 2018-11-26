@@ -8,7 +8,7 @@
 
 .story-card {
   margin: 0 30rpx 30rpx 30rpx;
-  padding: 20rpx;
+  padding: 30rpx;
   background-color: #fff;
   border-radius: 15rpx;
 }
@@ -24,24 +24,38 @@
 
 .head {
   font-size: 14px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.story-card-bottom {
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  justify-content: space-between;
 }
 
 .eye {
-  width: 16px;
-  height: 16px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
   vertical-align: middle;
 }
 
-.click, .author, .publish_time, .tags {
+.click, .author, .publish_time {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.story-card-bottom-left, .tags {
   display: inline-block;
   font-size: 12px;
-  margin-right: 20rpx;
 }
 
 .tag {
   display: inline-block;
-  margin-right: 20rpx;
+  margin-left: 20rpx;
   border-radius: 20rpx;
-  padding: 0 10rpx;
+  padding: 0 5rpx;
   border: 1px #ccc solid;
 }
