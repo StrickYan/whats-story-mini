@@ -46,6 +46,6 @@ page {
 
 #content {
   font-size: 16px;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
 }

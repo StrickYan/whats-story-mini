@@ -14,6 +14,19 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const arrayUnique = function(array) {
+  let arr = Array.from(new Set(array));
+  console.log(arr);
+  return arr;
+}
+
+const arrayColumn = function(array, column) {
+  let arr = [];
+  arr.push(array.column);
+  return arr;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  arrayUnique: arrayUnique
 }

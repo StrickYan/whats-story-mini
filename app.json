@@ -2,13 +2,15 @@
   "pages": [
     "pages/story/recommend/recommend",
     "pages/story/detail/detail",
+    "pages/book/index",
+    "pages/me/index",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "故事书",
+    "navigationBarTitleText": "千里尘",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -24,13 +26,13 @@
         "selectedIconPath": "image/主页.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/book/index",
         "text": "书架",
         "iconPath": "image/照明.png",
         "selectedIconPath": "image/照明.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/me/index",
         "text": "我的",
         "iconPath": "image/联系人.png",
         "selectedIconPath": "image/联系人.png"

@@ -1,5 +1,5 @@
 {
-  "window": {
-    "enablePullDownRefresh": true
-  }
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f0f0f0",
+  "backgroundTextStyle": "dark"
 }
