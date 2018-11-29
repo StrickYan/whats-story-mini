@@ -26,12 +26,6 @@
         "selectedIconPath": "image/主页.png"
       },
       {
-        "pagePath": "pages/book/index",
-        "text": "书架",
-        "iconPath": "image/照明.png",
-        "selectedIconPath": "image/照明.png"
-      },
-      {
         "pagePath": "pages/me/index",
         "text": "我的",
         "iconPath": "image/联系人.png",
