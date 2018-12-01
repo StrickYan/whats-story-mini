@@ -22,7 +22,7 @@
   <view wx:if="{{isLastPage}}" wx:key="last_page" class="story-card">
     <view class='title'>没有更多啦</view>
     <view class='head'>
-      <text>人家是有底线的，等一下再来看看吧。</text>
+      <text>人家是有底线的，等一会再来看看吧。</text>
     </view>
     <view class='story-card-bottom'>
       <view class='story-card-bottom-left'>
