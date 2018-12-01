@@ -1,4 +1,5 @@
-const host = 'app.beishanwen.com'
+const host = 'https://app.beishanwen.com'
+// const host = 'http://centos-linux-dev.baidu.com:8080'
 
 const config = {
   errorCode: {
@@ -6,7 +7,7 @@ const config = {
   },
 
   // 获取故事列表
-  getStoryApi: `https://${host}/ws/getStory`,
+  getStoryApi: `${host}/ws/getStory`,
 }
 
 module.exports = config
