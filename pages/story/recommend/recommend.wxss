@@ -18,13 +18,13 @@
 }
 
 .title {
-  font-size: 1.2em;
+  font-size: 36rpx;
   font-weight: bold;
   color: rgb(153, 51, 51);
 }
 
 .head {
-  font-size: 1em;
+  font-size: 32rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
@@ -38,8 +38,8 @@
 
 .eye {
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 36rpx;
+  height: 36rpx;
   vertical-align: middle;
 }
 
@@ -50,7 +50,7 @@
 
 .story-card-bottom-left, .tags {
   display: inline-block;
-  font-size: 0.8em;
+  font-size: 28rpx;
 }
 
 .tag {

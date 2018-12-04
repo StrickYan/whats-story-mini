@@ -20,7 +20,7 @@ page {
 }
 
 #title {
-  font-size: 2em;
+  font-size: 64rpx;
   font-weight: bold;
   color: rgb(153, 51, 51);
 }
@@ -35,7 +35,7 @@ page {
 
 #author, #publish_time, #source_name, #cate_name {
   display: inline-block;
-  font-size: 0.8em;
+  font-size: 28rpx;
   margin-right: 20rpx;
 }
 
@@ -46,7 +46,7 @@ page {
 }
 
 #content {
-  font-size: 1em;
+  font-size: 32rpx;
   margin-top: 60rpx;
   margin-bottom: 60rpx;
 }
