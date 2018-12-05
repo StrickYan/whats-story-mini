@@ -20,3 +20,44 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.container {
+  padding: 50rpx 0;
+}
+
+#isolation {
+  background-color: #f0f0f0;
+  height: 20rpx;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 60rpx 40rpx;
+  font-size: 32rpx;
+  /*清楚 buttom 默认样式*/
+  background-color: white;
+  padding: 0;
+}
+
+.btn::after {
+  border: none;
+}
+
+/* .btn-left, .btn-right {
+  height: 50rpx;
+} */
+
+.btn image {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.btn text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30rpx;
+}

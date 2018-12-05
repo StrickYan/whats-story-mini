@@ -75,4 +75,9 @@ Page({
   //     }
   //   })
   // },
+  toFeedback: function() {
+    wx.navigateTo({
+      url: './feedback/feedback'
+    })
+  },
 })
