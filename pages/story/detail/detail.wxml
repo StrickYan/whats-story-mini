@@ -7,8 +7,8 @@
     <view id='story_detail_line'>
       <view id='author'>{{storyDetail.author}}</view>
       <view id='publish_time'>{{storyDetail.publish_time}}</view>
-      <view id="source_name">{{storyDetail.source_name}}</view>
-      <view id="cate_name">{{storyDetail.cate_name}}</view>
+      <view id="source_name" wx:if="{{storyDetail.source_name}}">{{storyDetail.source_name}}</view>
+      <view id="cate_name" wx:if="{{storyDetail.cate_name}}">{{storyDetail.cate_name}}</view>
     </view>
     <view id='content'>
       <text>{{storyDetail.content}}</text>
