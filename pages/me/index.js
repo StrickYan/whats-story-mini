@@ -75,9 +75,9 @@ Page({
   //     }
   //   })
   // },
-  toFeedback: function() {
+  toCopyrightPage: function() {
     wx.navigateTo({
-      url: './feedback/feedback'
+      url: './copyright/copyright'
     })
   },
 })

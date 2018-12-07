@@ -30,11 +30,15 @@
   height: 20rpx;
 }
 
+#options {
+  padding: 30rpx;
+}
+
 .btn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 60rpx 40rpx;
+  margin: 5rpx 10rpx;
   font-size: 30rpx;
   /*清楚 buttom 默认样式*/
   background-color: white;

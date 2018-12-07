@@ -23,12 +23,24 @@
   </view>
 </view> -->
 
-<button class="btn" id="btn_feedback" open-type="contact">
-  <view class='btn-left'>
-    <image mode="aspectFit" src="/image/联系我们.png"></image>
-    <text>联系我们</text>
-  </view>
-  <view class='btn-right'>
-    <image mode="aspectFit" src="/image/右箭头.png"></image>
-  </view>
-</button>
+<view id='options'>
+  <button class="btn" id="btn_feedback" open-type="contact">
+    <view class='btn-left'>
+      <image mode="aspectFit" src="/image/联系我们.png"></image>
+      <text>联系我们</text>
+    </view>
+    <view class='btn-right'>
+      <image mode="aspectFit" src="/image/右箭头.png"></image>
+    </view>
+  </button>
+
+  <button class="btn" id="btn_copyright" bindtap='toCopyrightPage'>
+    <view class='btn-left'>
+      <image mode="aspectFit" src="/image/版权声明.png"></image>
+      <text>版权声明</text>
+    </view>
+    <view class='btn-right'>
+      <image mode="aspectFit" src="/image/右箭头.png"></image>
+    </view>
+  </button>
+</view>

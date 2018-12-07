@@ -1,0 +1,6 @@
+/* pages/me/copyright/copyright.wxss */
+
+#page {
+  padding: 30rpx;
+  font-size: 30rpx;
+}
