@@ -35,7 +35,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 60rpx 40rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   /*清楚 buttom 默认样式*/
   background-color: white;
   padding: 0;

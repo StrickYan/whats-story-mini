@@ -18,13 +18,13 @@
 }
 
 .title {
-  font-size: 36rpx;
+  font-size: 32rpx;
   font-weight: bold;
   color: rgb(153, 51, 51);
 }
 
 .head {
-  font-size: 32rpx;
+  font-size: 30rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
@@ -50,13 +50,13 @@
 
 .story-card-bottom-left, .tags {
   display: inline-block;
-  font-size: 28rpx;
+  font-size: 24rpx;
 }
 
 .tag {
   display: inline-block;
   margin-left: 20rpx;
   border-radius: 20rpx;
-  padding: 0 5rpx;
+  padding: 0 10rpx;
   border: 1px #ccc solid;
 }
