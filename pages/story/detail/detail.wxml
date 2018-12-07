@@ -14,6 +14,6 @@
       <text>{{storyDetail.content}}</text>
     </view>
 
-    <template is="foot" />
+    <template is="foot" wx:if="{{isDomainShow}}" />
   </view>
 </view>

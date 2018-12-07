@@ -7,6 +7,7 @@ Page({
   data: {
     storyId: 0,
     storyDetail: {},
+    isDomainShow: false,
   },
   onLoad: function(params) {
     // console.log(params)
@@ -66,7 +67,10 @@ Page({
       },
       complete(result) {
         // console.log('request complete', result)
-        wx.hideLoading()
+        that.setData({
+          isDomainShow: true
+        })
+        wx.hideLoading();
       }
     })
   }
