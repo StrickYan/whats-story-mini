@@ -20,6 +20,17 @@ Page({
     })
     this.getStory();
   },
+  // 下拉刷新
+  onPullDownRefresh: function() {
+    var that = this;
+    // 显示顶部刷新图标
+    wx.showNavigationBarLoading();
+    that.getStory();
+    // 隐藏导航栏加载框
+    wx.hideNavigationBarLoading();
+    // 停止下拉动作
+    wx.stopPullDownRefresh();
+  },
   // 分享页面
   onShareAppMessage: function(res) {
     var that = this;
@@ -58,7 +69,7 @@ Page({
       fail(result) {
         console.log('request fail', result)
         wx.showToast({
-          title: result.data.errmsg,
+          title: '网络繁忙',
           // icon: 'none',
           image: "/image/meh.png",
           duration: 2000,

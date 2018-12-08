@@ -34,15 +34,7 @@ Page({
     var that = this;
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
-    // 恢复初始值
-    that.setData({
-      storyIds: [],
-      storyList: [],
-      page: 0,
-      limit: 10,
-      isLastPage: false,
-    })
-    that.getStory();
+    that.getStory(true);
     // 隐藏导航栏加载框
     wx.hideNavigationBarLoading();
     // 停止下拉动作
@@ -61,8 +53,16 @@ Page({
       path: '/pages/story/recommend/recommend',
     }
   },
-  getStory: function() {
+  // isInit: true 清空 story list
+  getStory: function(isInit) {
     const that = this
+    if (true === isInit) {
+      // 恢复初始值
+      that.setData({
+        page: 0,
+        limit: 10,
+      })
+    }
     wx.request({
       url: config.getStoryApi,
       data: {
@@ -82,8 +82,12 @@ Page({
               isLastPage: true,
             })
           } else {
-            let tempStoryIds = that.data.storyIds;
-            let tempStoryList = that.data.storyList;
+            let tempStoryIds = [];
+            let tempStoryList = [];
+            if (true !== isInit) {
+              tempStoryIds = that.data.storyIds;
+              tempStoryList = that.data.storyList;
+            }
             for (let index in result.data.data) {
               let item = result.data.data[index];
               let theStoryId = item.story_id;
@@ -110,9 +114,9 @@ Page({
         }
       },
       fail(result) {
-        // console.log('request fail', result)
+        console.log('request fail', result)
         wx.showToast({
-          title: result.data.errmsg,
+          title: '网络繁忙',
           // icon: 'none',
           image: "/image/meh.png",
           duration: 2000,
