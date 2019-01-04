@@ -102,10 +102,6 @@ Page({
 
   searchStory(e) {
     var that = this;
-    wx.showLoading({
-      title: '加载中',
-      mask: true,
-    })
     that.setData({
       storyIds: [],
       storyList: [],
@@ -114,17 +110,19 @@ Page({
       isLastPage: false, // 是否没有更多内容
       inputValue: e.detail.value
     });
+    if (!that.data.inputValue) {
+      return;
+    }
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+    })
     that.getStory(true);
   },
 
   // isInit: true 清空 story list
   getStory: function(isInit) {
     const that = this
-
-    if (!that.data.inputValue) {
-      return;
-    }
-
     if (true === isInit) {
       // 恢复初始值
       that.setData({
