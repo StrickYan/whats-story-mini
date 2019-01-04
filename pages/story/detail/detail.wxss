@@ -16,7 +16,7 @@ page {
 
 #story_detail {
   margin: 30rpx;
-  padding: 30rpx;
+  padding: 20rpx;
 }
 
 #title {
