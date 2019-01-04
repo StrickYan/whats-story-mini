@@ -24,6 +24,16 @@
 </view> -->
 
 <view id='options'>
+  <button class="btn" id="btn_search" bindtap='toSearchPage'>
+    <view class='btn-left'>
+      <image mode="aspectFit" src="/image/搜索.png"></image>
+      <text>搜索</text>
+    </view>
+    <view class='btn-right'>
+      <image mode="aspectFit" src="/image/右箭头.png"></image>
+    </view>
+  </button>
+
   <button class="btn" id="btn_feedback" open-type="contact">
     <view class='btn-left'>
       <image mode="aspectFit" src="/image/联系我们.png"></image>

@@ -1,5 +1,10 @@
-<!--recomend.wxml-->
-<view class="page">
+<!--pages/me/search/search.wxml-->
+<!-- <text>pages/me/search/search.wxml</text> -->
+<view class='page'>
+  <view id="v_search">
+    <input id="input_search" placeholder="搜一搜" placeholder-class="center" confirm-type="search" bindconfirm="searchStory" focus="{{focus}}" />
+  </view>
+
   <view wx:for="{{storyList}}" wx:key="story_id" class="story-card">
     <view class='title'>{{item.title}}</view>
     <view class='head' data-storyid="{{item.story_id}}" bindtap="detailPage">
@@ -20,14 +25,14 @@
   </view>
 
   <view wx:if="{{isLastPage}}" wx:key="last_page" class="story-card">
-    <view class='title'>没有更多啦</view>
+    <view class='title'>没有更多相似作品</view>
     <view class='head'>
-      <text>人家是有底线的，等一会再来看看吧。</text>
+      <text>欢迎反馈，我们会认真地不断丰富作品库。</text>
     </view>
     <view class='story-card-bottom'>
       <view class='story-card-bottom-left'>
         <view class='author'>一木扶苏</view>
-        <view class='publish_time'>2018.11.29</view>
+        <view class='publish_time'>2019.01.05</view>
       </view>
       <view class='tags'>
         <view class='tag source_name'>见字</view>

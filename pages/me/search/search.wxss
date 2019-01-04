@@ -1,0 +1,82 @@
+/* pages/me/search/search.wxss */
+
+page {
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+#v_search {
+  padding: 30rpx;
+}
+
+#input_search {
+  background-color: white;
+  padding: 10rpx 20rpx;
+  border-radius: 15rpx;
+}
+
+.center {
+  text-align: center;
+}
+
+/*以下为 recommend 页 css*/
+
+.story-card {
+  margin: 0 30rpx 30rpx 30rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.story-card:first-child {
+  margin-top: 30rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgb(153, 51, 51);
+}
+
+.head {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.story-card-bottom {
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  justify-content: space-between;
+}
+
+.eye {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.click, .author, .publish_time {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.story-card-bottom-left, .tags {
+  display: inline-block;
+  font-size: 24rpx;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+  padding: 0 10rpx;
+  border: 1px #ccc solid;
+}

@@ -75,6 +75,11 @@ Page({
   //     }
   //   })
   // },
+  toSearchPage: function() {
+    wx.navigateTo({
+      url: './search/search'
+    })
+  },
   toCopyrightPage: function() {
     wx.navigateTo({
       url: './copyright/copyright'
