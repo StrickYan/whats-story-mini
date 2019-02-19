@@ -11,14 +11,26 @@ Page({
   },
   onLoad: function(params) {
     // console.log(params)
-    this.setData({
-      storyId: params.story_id,
-    })
+    var that = this;
     wx.showLoading({
       title: '加载中',
-      mask: true
+      mask: true,
     })
-    this.getStory();
+    app.userLogin({
+      success: function() {
+        that.setData({
+          storyId: params.story_id,
+        }, function() {
+          that.getStory();
+        })
+      },
+      fail: function() {
+        wx.hideLoading()
+        wx.navigateTo({
+          url: '../../../pages/me/login/login'
+        })
+      }
+    })
   },
   // 下拉刷新
   onPullDownRefresh: function() {
@@ -47,12 +59,19 @@ Page({
         story_id: that.data.storyId
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'token': wx.getStorageSync('token'),
+        'content-type': 'application/x-www-form-urlencoded',
       },
       method: "POST",
       dataType: "json",
       success(result) {
-        if (config.errorCode.success == result.data.errno && result.data.data[0]) {
+        if (config.errorCode.notLogin == result.data.errno) {
+          wx.removeStorageSync('token')
+          wx.navigateTo({
+            url: '../../me/login/login'
+          })
+          return
+        } else if (config.errorCode.success == result.data.errno && result.data.data[0]) {
           that.setData({
             storyDetail: result.data.data[0]
           })

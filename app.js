@@ -1,17 +1,14 @@
 //app.js
+
+const config = require('./config')
+
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -35,5 +32,65 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  // 自定义登录
+  userLogin: function(object) {
+    if (wx.getStorageSync('token')) {
+      if (typeof object == "object") {
+        let func = object.success
+        typeof func == "function" && func()
+      }
+    } else {
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          if (res.code) {
+            // 发起网络请求
+            wx.request({
+              url: config.wxLoginApi,
+              data: {
+                code: res.code
+              },
+              dataType: "json",
+              success(result) {
+                // console.log('request success', result)
+                if (config.errorCode.success == result.data.errno) {
+                  let token = result.data.data['token']
+                  wx.setStorageSync('token', token)
+
+                  if (typeof object == "object") {
+                    let func = object.success
+                    typeof func == "function" && func()
+                  }
+                } else {
+                  // console.log('wxLoginApi failed', result)
+                  if (typeof object == "object") {
+                    let func = object.fail
+                    typeof func == "function" && func()
+                  }
+                }
+              },
+              fail(result) {
+                // console.log('request fail', result)
+                if (typeof object == "object") {
+                  let func = object.fail
+                  typeof func == "function" && func()
+                }
+              }
+            })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+            if (typeof object == "object") {
+              let func = object.fail
+              typeof func == "function" && func()
+            }
+          }
+        }
+      })
+    }
+    if (typeof object == "object") {
+      let func = object.complete
+      typeof func == "function" && func()
+    }
   }
 })

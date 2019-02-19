@@ -3,9 +3,12 @@ const host = 'https://app.beishanwen.com'
 
 const config = {
   errorCode: {
-    success: 0
+    success: 0,
+    notLogin: 101,
   },
 
+  // 小程序登录接口
+  wxLoginApi: `${host}/ws/wxLogin`,
   // 获取故事列表
   getStoryApi: `${host}/ws/getStory`,
 }

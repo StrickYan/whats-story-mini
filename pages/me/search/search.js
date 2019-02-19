@@ -138,13 +138,20 @@ Page({
         search: that.data.inputValue,
       },
       header: {
+        'token': wx.getStorageSync('token'),
         // 'content-type': 'application/json' // 默认值
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: "POST",
       dataType: "json",
       success(result) {
-        if (config.errorCode.success == result.data.errno) {
+        if (config.errorCode.notLogin == result.data.errno) {
+          wx.removeStorageSync('token')
+          wx.navigateTo({
+            url: '../../me/login/login'
+          })
+          return
+        } else if (config.errorCode.success == result.data.errno) {
           if (result.data.data.length == 0) {
             that.setData({
               isLastPage: true,
