@@ -17,10 +17,35 @@
   margin-top: 30rpx;
 }
 
+.story-card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+}
+
 .title {
   font-size: 32rpx;
   font-weight: bold;
   color: rgb(153, 51, 51);
+}
+
+.btn-like {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-like image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.btn-like text {
+  margin-left: 10rpx;
+  font-size: 22rpx;
 }
 
 .head {
@@ -34,6 +59,7 @@
   flex-direction: row;
   color: gray;
   justify-content: space-between;
+  align-items: center;
 }
 
 .eye {

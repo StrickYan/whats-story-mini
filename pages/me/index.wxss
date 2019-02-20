@@ -55,9 +55,9 @@
 
 .btn image {
   display: inline-block;
+  vertical-align: middle;
   width: 40rpx;
   height: 40rpx;
-  vertical-align: middle;
 }
 
 .btn text {

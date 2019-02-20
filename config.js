@@ -11,6 +11,8 @@ const config = {
   wxLoginApi: `${host}/ws/wxLogin`,
   // 获取故事列表
   getStoryApi: `${host}/ws/getStory`,
+  // 点赞
+  likeApi: `${host}/ws/like`,
 }
 
 module.exports = config

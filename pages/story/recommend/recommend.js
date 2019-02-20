@@ -152,5 +152,67 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?story_id=' + storyId
     })
+  },
+  like: function(event) {
+    console.log(event)
+    var that = this
+    let storyId = parseInt(event.currentTarget.dataset.storyid)
+    let isLike = parseInt(event.currentTarget.dataset.islike)
+    let operate = 0
+    if (isLike == 1) {
+      operate = 2
+    } else if (isLike == 2) {
+      operate = 1
+    }
+
+    // 即时更新显示的点赞数
+    let index = parseInt(event.currentTarget.dataset.index)
+    let tempStoryList = that.data.storyList;
+    tempStoryList[index].is_like = isLike == 1 ? 2 : 1
+    let oriLikes = parseInt(tempStoryList[index].likes)
+    if (operate == 1) {
+      tempStoryList[index].likes = oriLikes + 1
+    } else if (operate == 2) {
+      if (tempStoryList[index].likes > 0) {
+        tempStoryList[index].likes = oriLikes - 1
+      }
+    } else {
+      console.log("operate not in (1,2)")
+      return
+    }
+    that.setData({
+      storyList: tempStoryList,
+    })
+
+    // 实际发送点赞请求
+    wx.request({
+      url: config.likeApi,
+      data: {
+        story_id: storyId,
+        operate: operate,
+      },
+      header: {
+        'token': wx.getStorageSync('token'),
+        // 'content-type': 'application/json' // 默认值
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: "POST",
+      dataType: "json",
+      success(result) {
+        if (config.errorCode.notLogin == result.data.errno) {
+          wx.removeStorageSync('token')
+          wx.navigateTo({
+            url: '../../me/login/login'
+          })
+          return
+        }
+      },
+      fail(result) {
+        console.log('request fail', result)
+      },
+      complete(result) {
+        // console.log('request complete', result)
+      }
+    })
   }
 })
