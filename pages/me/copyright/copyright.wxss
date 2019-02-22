@@ -1,6 +1,23 @@
 /* pages/me/copyright/copyright.wxss */
+@import "../../template/foot.wxss";
+
+page {
+  height: 100%; /*服务 foot 底部孤固定*/
+}
 
 #page {
+  position: relative; /*服务 foot 底部固定*/
+  min-height: 100%; /*服务 foot 底部固定*/
+  padding-bottom: 160rpx; /*服务 foot 底部固定*/
+  box-sizing: border-box; /*服务 foot 底部固定*/
   padding: 30rpx;
   font-size: 30rpx;
+}
+
+.tail {
+  text-align: right;
+}
+
+#mail {
+  margin-bottom: 250rpx;
 }

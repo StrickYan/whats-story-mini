@@ -27,7 +27,7 @@
   <button class="btn" id="btn_search" bindtap='toSearchPage'>
     <view class='btn-left'>
       <image mode="aspectFit" src="/image/搜索.png"></image>
-      <text>搜索</text>
+      <text>简单搜索</text>
     </view>
     <view class='btn-right'>
       <image mode="aspectFit" src="/image/右箭头.png"></image>
@@ -35,8 +35,8 @@
   </button>
   <button class="btn" id="btn_copyright" bindtap='toCopyrightPage'>
     <view class='btn-left'>
-      <image mode="aspectFit" src="/image/版权声明.png"></image>
-      <text>版权声明</text>
+      <image mode="aspectFit" src="/image/致读者书.png"></image>
+      <text>致读者书</text>
     </view>
     <view class='btn-right'>
       <image mode="aspectFit" src="/image/右箭头.png"></image>
