@@ -1,28 +1,13 @@
 <!--pages/me/search/search.wxml-->
-<!-- <text>pages/me/search/search.wxml</text> -->
+
+<import src="/pages/template/article.wxml" />
+
 <view class='page'>
   <view id="v_search">
     <input id="input_search" placeholder="搜一搜" placeholder-class="center" confirm-type="search" bindconfirm="searchStory" focus="{{focus}}" />
   </view>
 
-  <view wx:for="{{storyList}}" wx:key="story_id" class="story-card">
-    <view class='title'>{{item.title}}</view>
-    <view class='head' data-storyid="{{item.story_id}}" bindtap="detailPage">
-      <text>{{item.head}}</text>
-    </view>
-    <view class='story-card-bottom'>
-      <!-- <image mode="scaleToFill" src="/image/eye.png" class='eye'></image>
-      <view class='click'>{{item.click}}</view> -->
-      <view class='story-card-bottom-left'>
-        <view class='author'>{{item.author}}</view>
-        <view class='publish_time'>{{item.publish_time}}</view>
-      </view>
-      <view class='tags'>
-        <view class='tag source_name'>{{item.source_name}}</view>
-        <view class='tag cate_name'>{{item.cate_name}}</view>
-      </view>
-    </view>
-  </view>
+  <template is="article" data="{{storyList:storyList}}" />
 
   <view wx:if="{{isLastPage}}" wx:key="last_page" class="story-card">
     <view class='title'>没有更多相似作品</view>

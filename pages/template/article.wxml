@@ -1,0 +1,31 @@
+<template name="article">
+  <view wx:for="{{storyList}}" wx:key="story_id" class="story-card">
+    <view class='story-card-top'>
+      <view class='story-card-top-left'>
+        <view class='title'>{{item.title}}</view>
+      </view>
+      <view class='story-card-top-right'>
+        <view class='btn-like' data-index="{{index}}" data-storyid="{{item.story_id}}" data-islike="{{item.is_like}}" bindtap="like">
+          <image mode="aspectFit" src="/image/like.png" wx:if="{{item.is_like == 2}}"></image>
+          <image mode="aspectFit" src="/image/liked.png" wx:if="{{item.is_like == 1}}"></image>
+          <text wx:if="{{item.likes > 0}}">{{item.likes}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='head' data-storyid="{{item.story_id}}" bindtap="detailPage">
+      <text>{{item.head}}</text>
+    </view>
+    <view class='story-card-bottom'>
+      <!-- <image mode="scaleToFill" src="/image/eye.png" class='eye'></image>
+      <view class='click'>{{item.click}}</view> -->
+      <view class='story-card-bottom-left'>
+        <view class='author'>{{item.author}}</view>
+        <view class='publish_time'>{{item.publish_time}}</view>
+      </view>
+      <view class='tags'>
+        <view class='tag source_name'>{{item.source_name}}</view>
+        <view class='tag cate_name'>{{item.cate_name}}</view>
+      </view>
+    </view>
+  </view>
+</template>

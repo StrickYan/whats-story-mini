@@ -7,7 +7,7 @@ Page({
   data: {
     storyId: 0,
     storyDetail: {},
-    // isDomainShow: false,
+    isDomainShow: false,
   },
   onLoad: function(params) {
     // console.log(params)
@@ -95,9 +95,9 @@ Page({
       },
       complete(result) {
         // console.log('request complete', result)
-        // that.setData({
-        //   isDomainShow: true
-        // })
+        that.setData({
+          isDomainShow: true
+        })
       }
     })
   }
