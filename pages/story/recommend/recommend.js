@@ -33,9 +33,7 @@ Page({
       },
       fail: function() {
         wx.hideLoading()
-        wx.navigateTo({
-          url: '../../../pages/me/login/login'
-        })
+        app.toLogin()
       }
     })
   },
@@ -88,10 +86,7 @@ Page({
       dataType: "json",
       success(result) {
         if (config.errorCode.notLogin == result.data.errno) {
-          wx.removeStorageSync('token')
-          wx.navigateTo({
-            url: '../../me/login/login'
-          })
+          app.toLogin()
           return
         } else if (config.errorCode.success == result.data.errno) {
           if (result.data.data.length == 0) {
@@ -121,6 +116,7 @@ Page({
             })
           }
         } else {
+          wx.hideLoading()
           wx.showToast({
             title: result.data.errmsg,
             // icon: 'none',
@@ -129,9 +125,11 @@ Page({
             mask: true
           })
         }
+        wx.hideLoading()
       },
       fail(result) {
         console.log('request fail', result)
+        wx.hideLoading()
         wx.showToast({
           title: '网络繁忙',
           // icon: 'none',
@@ -142,7 +140,6 @@ Page({
       },
       complete(result) {
         // console.log('request complete', result)
-        wx.hideLoading()
       }
     })
   },
@@ -200,10 +197,7 @@ Page({
       dataType: "json",
       success(result) {
         if (config.errorCode.notLogin == result.data.errno) {
-          wx.removeStorageSync('token')
-          wx.navigateTo({
-            url: '../../me/login/login'
-          })
+          app.toLogin()
           return
         }
       },

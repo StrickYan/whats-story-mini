@@ -113,21 +113,22 @@ Page({
     that.setData({
       loading: true
     }, function() {
-      app.userLogin({
-        success: function() {
-          wx.navigateBack({
-            delta: 1,
-            success: function() {
-
-            }
-          })
-        },
-        complete: function() {
-          that.setData({
-            loading: false
-          })
-        }
+      wx.removeStorageSync('token')
+      wx.reLaunch({
+        url: '/pages/story/recommend/recommend'
       })
+      // app.userLogin({
+      //   success: function() {
+      //     wx.navigateBack({
+      //       delta: 1
+      //     })
+      //   },
+      //   complete: function() {
+      //     that.setData({
+      //       loading: false
+      //     })
+      //   }
+      // })
     })
   }
 })

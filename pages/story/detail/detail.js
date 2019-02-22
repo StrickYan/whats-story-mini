@@ -7,7 +7,7 @@ Page({
   data: {
     storyId: 0,
     storyDetail: {},
-    isDomainShow: false,
+    // isDomainShow: false,
   },
   onLoad: function(params) {
     // console.log(params)
@@ -26,9 +26,7 @@ Page({
       },
       fail: function() {
         wx.hideLoading()
-        wx.navigateTo({
-          url: '../../../pages/me/login/login'
-        })
+        app.toLogin()
       }
     })
   },
@@ -47,7 +45,7 @@ Page({
   onShareAppMessage: function(res) {
     var that = this;
     return {
-      title: that.data.storyDetail.title,
+      title: that.data.storyDetail.title + ' -by' + that.data.storyDetail.author,
       path: '/pages/story/detail/detail?story_id=' + that.data.storyId,
     }
   },
@@ -66,16 +64,14 @@ Page({
       dataType: "json",
       success(result) {
         if (config.errorCode.notLogin == result.data.errno) {
-          wx.removeStorageSync('token')
-          wx.navigateTo({
-            url: '../../me/login/login'
-          })
+          app.toLogin()
           return
         } else if (config.errorCode.success == result.data.errno && result.data.data[0]) {
           that.setData({
             storyDetail: result.data.data[0]
           })
         } else {
+          wx.hideLoading();
           wx.showToast({
             title: result.data.errmsg,
             // icon: 'none',
@@ -84,9 +80,11 @@ Page({
             mask: true
           })
         }
+        wx.hideLoading();
       },
       fail(result) {
         console.log('request fail', result)
+        wx.hideLoading();
         wx.showToast({
           title: '网络繁忙',
           // icon: 'none',
@@ -97,10 +95,9 @@ Page({
       },
       complete(result) {
         // console.log('request complete', result)
-        that.setData({
-          isDomainShow: true
-        })
-        wx.hideLoading();
+        // that.setData({
+        //   isDomainShow: true
+        // })
       }
     })
   }
