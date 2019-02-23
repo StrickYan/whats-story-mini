@@ -9,6 +9,8 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    wx.removeStorageSync('token')
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
