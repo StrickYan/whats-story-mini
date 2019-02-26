@@ -72,6 +72,11 @@ Page({
   //     }
   //   })
   // },
+  toMyLikePage: function () {
+    wx.navigateTo({
+      url: './mylike/mylike'
+    })
+  },
   toSearchPage: function() {
     wx.navigateTo({
       url: './search/search'

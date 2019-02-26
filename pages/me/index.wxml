@@ -24,6 +24,15 @@
 </view> -->
 
 <view id='options'>
+  <button class="btn" id="btn_my_like" bindtap='toMyLikePage'>
+    <view class='btn-left'>
+      <image mode="aspectFit" src="/image/heart.png"></image>
+      <text>我的喜欢</text>
+    </view>
+    <view class='btn-right'>
+      <image mode="aspectFit" src="/image/右箭头.png"></image>
+    </view>
+  </button>
   <button class="btn" id="btn_search" bindtap='toSearchPage'>
     <view class='btn-left'>
       <image mode="aspectFit" src="/image/搜索.png"></image>

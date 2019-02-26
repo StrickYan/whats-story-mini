@@ -1,0 +1,12 @@
+/* pages/me/mylike/mylike.wxss */
+@import "/pages/template/article.wxss";
+
+page {
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}

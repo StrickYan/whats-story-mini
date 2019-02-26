@@ -9,7 +9,8 @@
     "pages/me/feedback/feedback",
     "pages/me/copyright/copyright",
     "pages/me/search/search",
-    "pages/me/login/login"
+    "pages/me/login/login",
+    "pages/me/mylike/mylike"
   ],
   "window": {
     "backgroundTextStyle": "light",
