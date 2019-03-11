@@ -1,5 +1,5 @@
 <template name="article">
-  <view wx:for="{{storyList}}" wx:key="story_id" class="story-card">
+  <view wx:for="{{storyList}}" wx:key="story_id" wx:for-index="idx" class="story-card">
     <view class='story-card-top'>
       <view class='story-card-top-left'>
         <view class='title'>{{item.title}}</view>

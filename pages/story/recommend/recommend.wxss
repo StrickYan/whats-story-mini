@@ -6,3 +6,11 @@
   display: flex;
   flex-direction: column;
 }
+
+.offer {
+  margin: 30rpx;
+}
+
+.offer ad {
+  border-radius: 15rpx;
+}

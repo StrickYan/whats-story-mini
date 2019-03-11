@@ -20,6 +20,7 @@ Page({
       "我闭南楼看道书，幽帘清寂在仙居。 -李白",
       "闲门向山路，深柳读书堂。 -刘昚虚",
     ],
+    isShowAd: false,
   },
   onLoad: function() {
     var that = this;
@@ -113,6 +114,7 @@ Page({
               storyList: tempStoryList,
               page: that.data.page + 1, // 成功返回后当前页码加1
               isLastPage: false,
+              isShowAd: true, // 显示广告
             })
           }
         } else {

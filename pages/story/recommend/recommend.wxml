@@ -3,6 +3,10 @@
 <import src="/pages/template/article.wxml" />
 
 <view class="page">
+  <view class="offer" wx:if="{{isShowAd}}">
+    <ad unit-id="adunit-3a256d563a4b9dee"></ad>
+  </view>
+
   <template is="article" data="{{storyList:storyList}}" />
 
   <view wx:if="{{isLastPage}}" wx:key="last_page" class="story-card">
