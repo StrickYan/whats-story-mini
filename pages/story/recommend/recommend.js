@@ -21,6 +21,7 @@ Page({
       "闲门向山路，深柳读书堂。 -刘昚虚",
     ],
     isShowAd: false,
+    pullDownRefreshTimes: 0, // 下拉刷新次数
   },
   onLoad: function() {
     var that = this;
@@ -42,8 +43,14 @@ Page({
   onPullDownRefresh: function() {
     var that = this;
     that.setData({
-      isShowAd: false, // 隐藏广告，为了下面执行重新刷新
+      pullDownRefreshTimes: that.data.pullDownRefreshTimes + 1,
     })
+    // 限制广告最大刷新次数，反正被反作弊不显示广告
+    if (that.data.pullDownRefreshTimes < 3) {
+      that.setData({
+        isShowAd: false, // 隐藏广告，为了下面执行重新刷新
+      })
+    }
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
     that.getStory(true);
