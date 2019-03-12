@@ -41,6 +41,9 @@ Page({
   // 下拉刷新
   onPullDownRefresh: function() {
     var that = this;
+    that.setData({
+      isShowAd: false, // 隐藏广告，为了下面执行重新刷新
+    })
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
     that.getStory(true);
