@@ -13,7 +13,9 @@
     <view id='content'>
       <text>{{storyDetail.content}}</text>
     </view>
-
-    <template is="foot" wx:if="{{isDomainShow}}" />
   </view>
+  <view class="offer" wx:if="{{isShowAd}}">
+    <ad unit-id="adunit-2529b2c74f225831"></ad>
+  </view>
+  <template is="foot" wx:if="{{isDomainShow}}" />
 </view>

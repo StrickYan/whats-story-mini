@@ -8,6 +8,8 @@ Page({
     storyId: 0,
     storyDetail: {},
     isDomainShow: false,
+    isShowAd: false,
+    pullDownRefreshTimes: 0, // 下拉刷新次数
   },
   onLoad: function(params) {
     // console.log(params)
@@ -33,6 +35,15 @@ Page({
   // 下拉刷新
   onPullDownRefresh: function() {
     var that = this;
+    that.setData({
+      pullDownRefreshTimes: that.data.pullDownRefreshTimes + 1,
+    })
+    // 限制广告最大刷新次数，反正被反作弊不显示广告
+    if (that.data.pullDownRefreshTimes < 3) {
+      that.setData({
+        isShowAd: false, // 隐藏广告，为了下面执行重新刷新
+      })
+    }
     // 显示顶部刷新图标
     wx.showNavigationBarLoading();
     that.getStory();
@@ -68,7 +79,8 @@ Page({
           return
         } else if (config.errorCode.success == result.data.errno && result.data.data[0]) {
           that.setData({
-            storyDetail: result.data.data[0]
+            storyDetail: result.data.data[0],
+            isShowAd: true, // 显示广告
           })
         } else {
           wx.hideLoading();

@@ -15,8 +15,8 @@ page {
 }
 
 #story_detail {
-  margin: 30rpx;
-  padding: 20rpx;
+  margin: 50rpx;
+  /* padding: 20rpx; */
 }
 
 #title {
@@ -49,4 +49,12 @@ page {
   font-size: 34rpx;
   margin-top: 60rpx;
   margin-bottom: 60rpx;
+}
+
+.offer {
+  margin: 50rpx;
+}
+
+.offer ad {
+  border-radius: 15rpx;
 }
