@@ -11,6 +11,10 @@
   margin: 30rpx;
 }
 
+.offer:empty {
+  margin: 15rpx 30rpx; /*无广告填充则隐藏offer view*/
+}
+
 .offer ad {
   border-radius: 15rpx;
 }
