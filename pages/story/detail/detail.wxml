@@ -3,7 +3,16 @@
 
 <view class="page">
   <view id="story_detail">
-    <view id='title'>{{storyDetail.title}}</view>
+    <view id='story_detail_top'>
+      <view id='story_detail_top_left'>
+        <view id='title'>{{storyDetail.title}}</view>
+      </view>
+      <view id='story_detail_top_right' wx:if="{{isDomainShow}}">
+        <button id="shareBtn" plain="true" open-type="share">
+          <image mode="aspectFit" src="/image/share.png"></image>
+        </button>
+      </view>
+    </view>
     <view id='story_detail_line'>
       <view id='author'>{{storyDetail.author}}</view>
       <view id='publish_time'>{{storyDetail.publish_time}}</view>
@@ -13,6 +22,11 @@
     <view id='content'>
       <text>{{storyDetail.content}}</text>
     </view>
+  </view>
+  <view id='story_detail_tail' wx:if="{{isDomainShow}}">
+    <button id="shareBtn_tail" plain="true" open-type="share">
+      <image mode="aspectFit" src="/image/share.png"></image>
+    </button>
   </view>
   <view class="offer" wx:if="{{isShowAd}}">
     <ad unit-id="adunit-2529b2c74f225831"></ad>
