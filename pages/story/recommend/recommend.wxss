@@ -8,13 +8,14 @@
 }
 
 .offer {
-  margin: 30rpx;
-}
-
-.offer:empty {
-  margin: 15rpx 30rpx; /*无广告填充则隐藏offer view*/
+  margin: 0 30rpx;
 }
 
 .offer ad {
+  margin: 30rpx 0;
   border-radius: 15rpx;
+}
+
+.offer ad:empty {
+  margin: 15rpx 0; /*无广告填充则隐藏offer view*/
 }
