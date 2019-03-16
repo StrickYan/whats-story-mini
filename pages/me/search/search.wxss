@@ -12,7 +12,7 @@ page {
 }
 
 #v_search {
-  padding: 30rpx;
+  padding: 30rpx 30rpx 0 30rpx;
 }
 
 #input_search {

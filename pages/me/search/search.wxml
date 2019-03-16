@@ -7,22 +7,5 @@
     <input id="input_search" placeholder="搜一搜" placeholder-class="center" confirm-type="search" bindconfirm="searchStory" focus="{{focus}}" />
   </view>
 
-  <template is="article" data="{{storyList:storyList}}" />
-
-  <view wx:if="{{isLastPage}}" wx:key="last_page" class="story-card">
-    <view class='title'>没有更多相似作品</view>
-    <view class='head'>
-      <text>欢迎反馈，我们会认真地不断丰富作品库。</text>
-    </view>
-    <view class='story-card-bottom'>
-      <view class='story-card-bottom-left'>
-        <view class='author'>一木扶苏</view>
-        <view class='publish_time'>2019.01.05</view>
-      </view>
-      <view class='tags'>
-        <view class='tag source_name'>见字</view>
-        <view class='tag cate_name'>如面</view>
-      </view>
-    </view>
-  </view>
+  <template is="article" data="{{storyList:storyList,isLastPage:isLastPage}}" />
 </view>
