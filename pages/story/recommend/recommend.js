@@ -25,6 +25,22 @@ Page({
   },
   onLoad: function() {
     var that = this;
+
+    // 在页面中定义插屏广告
+    let interstitialAd = null
+    // 在页面onLoad回调事件中创建插屏广告实例
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-a0682acf87901024'
+      })
+    }
+    // 在适合的场景显示插屏广告
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
+        console.error(err)
+      })
+    }
+
     wx.showLoading({
       title: '加载中',
       mask: true,
@@ -124,7 +140,8 @@ Page({
               storyList: tempStoryList,
               page: that.data.page + 1, // 成功返回后当前页码加1
               isLastPage: false,
-              isShowAd: true, // 显示广告
+              // isShowAd: true, // 显示广告
+              isShowAd: false, // 隐藏广告
             })
           }
         } else {
