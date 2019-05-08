@@ -31,14 +31,14 @@
     </view>
 
     <view wx:if="{{isLastPage}}" wx:key="last_page" class="story-card">
-      <view class='title'>没有更多了啦</view>
+      <view class='title'>The End</view>
       <view class='head'>
-        <text>人家是有底线的。</text>
+        <text>哟 人家是有底线的。</text>
       </view>
       <view class='story-card-bottom'>
         <view class='story-card-bottom-left'>
-          <view class='author'>一木扶苏</view>
-          <view class='publish_time'>2018.11.30</view>
+          <view class='author'>友人A</view>
+          <view class='publish_time'>2019.04.01</view>
         </view>
         <view class='tags'>
           <view class='tag source_name'>见字</view>

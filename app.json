@@ -15,7 +15,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "千里尘",
+    "navigationBarTitleText": "故事读本",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -37,5 +37,6 @@
         "selectedIconPath": "image/底部栏-我的.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

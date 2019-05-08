@@ -22,22 +22,15 @@ Page({
     ],
     isShowAd: false,
     pullDownRefreshTimes: 0, // 下拉刷新次数
+    interstitialAd: null, // 在页面中定义插屏广告
   },
   onLoad: function() {
     var that = this;
 
-    // 在页面中定义插屏广告
-    let interstitialAd = null
     // 在页面onLoad回调事件中创建插屏广告实例
     if (wx.createInterstitialAd) {
-      interstitialAd = wx.createInterstitialAd({
+      that.interstitialAd = wx.createInterstitialAd({
         adUnitId: 'adunit-a0682acf87901024'
-      })
-    }
-    // 在适合的场景显示插屏广告
-    if (interstitialAd) {
-      interstitialAd.show().catch((err) => {
-        console.error(err)
       })
     }
 
@@ -55,6 +48,21 @@ Page({
       }
     })
   },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+    var that = this;
+
+    // 在适合的场景显示插屏广告
+    if (that.interstitialAd) {
+      that.interstitialAd.show().catch((err) => {
+        console.error(err)
+      })
+    }
+  },
+
   // 下拉刷新
   onPullDownRefresh: function() {
     var that = this;
@@ -116,11 +124,7 @@ Page({
           app.toLogin()
           return
         } else if (config.errorCode.success == result.data.errno) {
-          if (result.data.data.length == 0) {
-            that.setData({
-              isLastPage: true,
-            })
-          } else {
+          if (result.data.data.length > 0) {
             let tempStoryIds = [];
             let tempStoryList = [];
             if (true !== isInit) {
@@ -142,6 +146,12 @@ Page({
               isLastPage: false,
               // isShowAd: true, // 显示广告
               isShowAd: false, // 隐藏广告
+            })
+          }
+
+          if (result.data.data.length < that.data.limit) {
+            that.setData({
+              isLastPage: true,
             })
           }
         } else {

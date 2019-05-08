@@ -116,11 +116,7 @@ Page({
           app.toLogin()
           return
         } else if (config.errorCode.success == result.data.errno) {
-          if (result.data.data.length == 0) {
-            that.setData({
-              isLastPage: true,
-            })
-          } else {
+          if (result.data.data.length > 0) {
             let tempStoryIds = [];
             let tempStoryList = [];
             if (true !== isInit) {
@@ -140,6 +136,12 @@ Page({
               storyList: tempStoryList,
               page: that.data.page + 1, // 成功返回后当前页码加1
               isLastPage: false,
+            })
+          }
+
+          if (result.data.data.length < that.data.limit) {
+            that.setData({
+              isLastPage: true,
             })
           }
         } else {
