@@ -3,6 +3,9 @@
 const app = getApp()
 const config = require('../../../config')
 
+// 在页面中定义插屏广告
+let interstitialAd = null
+
 Page({
   data: {
     storyIds: [],
@@ -22,18 +25,9 @@ Page({
     ],
     isShowAd: false,
     pullDownRefreshTimes: 0, // 下拉刷新次数
-    interstitialAd: null, // 在页面中定义插屏广告
   },
   onLoad: function() {
     var that = this;
-
-    // 在页面onLoad回调事件中创建插屏广告实例
-    if (wx.createInterstitialAd) {
-      that.interstitialAd = wx.createInterstitialAd({
-        adUnitId: 'adunit-a0682acf87901024'
-      })
-    }
-
     wx.showLoading({
       title: '加载中',
       mask: true,
@@ -47,17 +41,31 @@ Page({
         app.toLogin()
       }
     })
+
+    // 在页面onLoad回调事件中创建插屏广告实例
+    if (wx.createInterstitialAd) {
+      interstitialAd = wx.createInterstitialAd({
+        adUnitId: 'adunit-a0682acf87901024'
+      })
+      interstitialAd.onLoad(() => {
+        console.log('onLoad event emit')
+      })
+      interstitialAd.onError((err) => {
+        console.log('onError event emit', err)
+      })
+      interstitialAd.onClose((res) => {
+        console.log('onClose event emit', res)
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    var that = this;
-
     // 在适合的场景显示插屏广告
-    if (that.interstitialAd) {
-      that.interstitialAd.show().catch((err) => {
+    if (interstitialAd) {
+      interstitialAd.show().catch((err) => {
         console.error(err)
       })
     }
@@ -69,7 +77,7 @@ Page({
     that.setData({
       pullDownRefreshTimes: that.data.pullDownRefreshTimes + 1,
     })
-    // 限制广告最大刷新次数，反正被反作弊不显示广告
+    // 限制广告最大刷新次数，防止被反作弊不显示广告
     if (that.data.pullDownRefreshTimes < 3) {
       that.setData({
         isShowAd: false, // 隐藏广告，为了下面执行重新刷新
