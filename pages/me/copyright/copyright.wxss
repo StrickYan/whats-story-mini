@@ -11,7 +11,7 @@ page {
   padding-bottom: 160rpx; /*服务 foot 底部固定*/
   box-sizing: border-box; /*服务 foot 底部固定*/
   padding: 30rpx;
-  font-size: 30rpx;
+  font-size: 32rpx;
 }
 
 .tail {
