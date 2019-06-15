@@ -18,7 +18,7 @@
 }
 
 .title {
-  font-size: 32rpx;
+  font-size: 36rpx;
   font-weight: bold;
   color: rgb(153, 51, 51);
 }
@@ -31,17 +31,17 @@
 }
 
 .btn-like image {
-  width: 32rpx;
-  height: 32rpx;
+  width: 36rpx;
+  height: 36rpx;
 }
 
 .btn-like text {
   margin-left: 10rpx;
-  font-size: 32rpx;
+  font-size: 36rpx;
 }
 
 .head {
-  font-size: 30rpx;
+  font-size: 32rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 }

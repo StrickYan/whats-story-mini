@@ -98,6 +98,31 @@ page {
   height: 60rpx;
 }
 
+#offer_tips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 150rpx 50rpx 0 50rpx;
+  font-size: 32rpx;
+}
+
+#offer_tips_center {
+  margin: 0 10rpx;
+}
+
+#offer_tips_left, #offer_tips_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#offer_tips image {
+  width: 32rpx;
+  height: 30rpx;
+}
+
 .offer {
   margin: 0 50rpx;
 }
