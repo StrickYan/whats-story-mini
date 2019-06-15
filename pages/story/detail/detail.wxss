@@ -3,6 +3,7 @@
 
 page {
   height: 100%; /*服务 foot 底部孤固定*/
+  background: #f5f5d5;
 }
 
 .page {
@@ -46,7 +47,7 @@ page {
 }
 
 #content {
-  font-size: 34rpx;
+  font-size: 36rpx;
   margin-top: 60rpx;
   margin-bottom: 60rpx;
 }
@@ -103,7 +104,7 @@ page {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 150rpx 50rpx 0 50rpx;
+  margin: 100rpx 50rpx 0 50rpx;
   font-size: 32rpx;
 }
 
