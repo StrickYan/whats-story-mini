@@ -104,7 +104,7 @@ page {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 100rpx 50rpx 0 50rpx;
+  margin: 100rpx 50rpx 50rpx 50rpx;
   font-size: 32rpx;
 }
 
@@ -129,7 +129,7 @@ page {
 }
 
 .offer ad {
-  margin: 50rpx 0;
+  margin: 0 0 50rpx 0;
   border-radius: 15rpx;
 }
 
