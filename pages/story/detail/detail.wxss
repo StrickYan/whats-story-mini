@@ -3,7 +3,8 @@
 
 page {
   height: 100%; /*服务 foot 底部孤固定*/
-  background: #f5f5d5;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFQTFRF+/Tq/fbs/PXr+fLo/vfv+vPp+fLq/fbu+/Ts+vPr/PXt78fhtwAAAMxJREFUeNokUAGWhUAIcuavgtz/wAtTvZpCBaRWe48WK4rUcqEiUT8+yMikilqpC1R6tP4Dtnze5tIQPL8jGhxVy000KI94vob7a80S8ic4ZioPng6CMJjAeuW5Y2LXoX0Mu4U4RIQs3+fIVzphv8oDVDPG4zsGraJJk6KeZRRdN4fHNOk0tcX1qXvKaxrxArItfupkZQOP4J5X9h3QdMni9LVGEtFU3UqajL/J8edAbgvzhFzzF2dYvZjnyMT6kk/IfGknvMnbYf0LMABShAycuj1oVgAAAABJRU5ErkJggg==");
+  /* background: #f5f5d5; */
 }
 
 .page {
