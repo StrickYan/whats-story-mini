@@ -6,7 +6,6 @@
     "pages/me/index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/me/feedback/feedback",
     "pages/me/copyright/copyright",
     "pages/me/search/search",
     "pages/me/login/login",
@@ -15,6 +14,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff",
     "navigationBarTitleText": "故事读本",
     "navigationBarTextStyle": "black"
   },

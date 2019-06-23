@@ -1,5 +1,9 @@
 /**index.wxss**/
 
+page {
+  background-color: #f0f0f0;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -23,26 +27,25 @@
 
 .container {
   padding: 50rpx 0;
+  background-color: #fff;
 }
 
-#isolation {
+.isolation {
   background-color: #f0f0f0;
   height: 20rpx;
-}
-
-#options {
-  padding: 30rpx;
 }
 
 .btn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5rpx 10rpx;
+  margin: 0;
   font-size: 32rpx;
+  line-height: 32rpx;
   /*清楚 buttom 默认样式*/
   background-color: white;
-  padding: 0;
+  padding: 30rpx;
+  border-radius: 0;
 }
 
 .btn::after {
