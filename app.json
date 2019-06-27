@@ -27,14 +27,14 @@
       {
         "pagePath": "pages/story/recommend/recommend",
         "text": "推荐",
-        "iconPath": "image/底部栏-推荐.png",
-        "selectedIconPath": "image/底部栏-推荐.png"
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home.png"
       },
       {
         "pagePath": "pages/me/index",
         "text": "我的",
-        "iconPath": "image/底部栏-我的.png",
-        "selectedIconPath": "image/底部栏-我的.png"
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/me.png"
       }
     ]
   },
