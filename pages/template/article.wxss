@@ -36,7 +36,7 @@
 }
 
 .btn-like text {
-  margin-left: 10rpx;
+  margin-right: 10rpx;
   font-size: 36rpx;
 }
 
