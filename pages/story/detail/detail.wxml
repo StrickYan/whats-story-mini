@@ -33,7 +33,7 @@
       <image mode="aspectFit" src="/image/arrow-down.png"></image>
     </view>
     <view id='offer_tips_center'>
-      <text>观看广告，支持开发者</text>
+      <text>支持开发者</text>
     </view>
     <view id='offer_tips_right'>
       <image mode="aspectFit" src="/image/arrow-down.png"></image>

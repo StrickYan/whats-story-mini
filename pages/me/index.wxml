@@ -52,7 +52,7 @@
     </view>
   </button>
   <view class="isolation"></view>
-  <button class="btn" id="btn_offer" bindtap='getVideoOffer'>
+  <!-- <button class="btn" id="btn_offer" bindtap='getVideoOffer'>
     <view class='btn-left'>
       <image mode="aspectFit" src="/image/support.png"></image>
       <text>观看广告，支持开发小哥哥</text>
@@ -60,5 +60,5 @@
     <view class='btn-right'>
       <image mode="aspectFit" src="/image/right.png"></image>
     </view>
-  </button>
+  </button> -->
 </view>
