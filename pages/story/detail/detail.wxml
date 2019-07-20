@@ -28,7 +28,7 @@
       <image mode="aspectFit" src="/image/share.png"></image>
     </button>
   </view> -->
-  <view id='offer_tips' wx:if="{{isDomainShow && isShowAd}}">
+  <!-- <view id='offer_tips' wx:if="{{isDomainShow && isShowAd}}">
     <view id='offer_tips_left'>
       <image mode="aspectFit" src="/image/arrow-down.png"></image>
     </view>
@@ -38,7 +38,7 @@
     <view id='offer_tips_right'>
       <image mode="aspectFit" src="/image/arrow-down.png"></image>
     </view>
-  </view>
+  </view> -->
   <view class="offer" wx:if="{{isDomainShow && isShowAd}}">
     <ad unit-id="adunit-2529b2c74f225831"></ad>
   </view>

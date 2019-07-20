@@ -130,7 +130,7 @@ page {
 }
 
 .offer ad {
-  margin: 0 0 50rpx 0;
+  margin: 50rpx 0 50rpx 0;
   border-radius: 15rpx;
 }
 
