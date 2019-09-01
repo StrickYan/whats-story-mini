@@ -119,6 +119,7 @@ Page({
       data: {
         page: that.data.page + 1,
         limit: that.data.limit,
+        order: 2,
       },
       header: {
         'token': wx.getStorageSync('token'),
